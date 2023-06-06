@@ -13,7 +13,7 @@ Example
 "aA11" -> 2 # 'a' and '1'
 "ABBA" -> 2 # 'A' and 'B' each occur twice */
 
-function duplicateCount($text) {
+/* function duplicateCount($text) {
   // Convierto el array a minúsculas
   $string = strtolower($text);
   
@@ -30,6 +30,23 @@ function duplicateCount($text) {
         // Lo pusheo al contador
         array_push($count, $string[$j]);
       }
+    }
+  }
+  return count($count);
+} */
+
+// REFACTOR
+
+function duplicateCount($text) {
+  // Convierto el array a minúsculas
+  $string = strtolower($text);
+  
+  // Seteo un contador
+  $count = [];
+  
+  foreach (count_chars($string, 1) as $char => $repeat) {
+    if ($repeat > 1) {
+      array_push($count, $char);
     }
   }
   return count($count);
