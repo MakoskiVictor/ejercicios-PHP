@@ -44,11 +44,15 @@ function duplicateCount($text) {
   // Seteo un contador
   $count = [];
   
-  foreach (count_chars($string, 1) as $char => $repeat) {
-    if ($repeat > 1) {
-      array_push($count, $char);
+  // count_char me permite saber la cantidad de veces que se ve un caracter
+  foreach (count_chars($string, 1) as $character => $canSee) {
+    // Si se ve más de una vez
+    if ($canSee > 1) {
+      // Lo pusheo al array
+      array_push($count, $character);
     }
   }
+  // Retorno el length del array
   return count($count);
 }
 
