@@ -19,11 +19,13 @@
         }
     }
     // count es el length
-    if (count($divisors) === 0) {
+   /*  if (count($divisors) === 0) {
       return $integer." is prime";
     } else {
       return $divisors;
-    }
+    } */
+    // Refactor
+    return $divisors ?: "$integer is prime";
   }
 
 
