@@ -3,9 +3,10 @@
 // GUARDO URL EN UNA VARIABLE
 $url = "https://restcountries.com/v3.1/all";
 
-// CONFIGURO LAS OPCIONES
+// CONFIGURO LAS OPCIONES DE LECTURA
 $options = array("ssl" => array("verify_peer" => false, "verify_prr_name" => false));
 
+// FILE_GET_CONTENTE ME PERMITE LEER EL CONTENIDO DE ACUERDO A MIS OPCIONES CONFIGURADAS
 $response = file_get_contents($url, false, stream_context_create($options));
 
 $objResponse = json_decode($response);
